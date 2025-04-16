@@ -1,0 +1,23 @@
+{
+  "main": [
+    {
+      "name": "Startseite",
+      "url": "/"
+    }
+  ],
+
+  "footer": [
+    {
+      "name": "Nutzungsbedingungen",
+      "url": "/terms"
+    },
+    {
+      "name": "Datenschutzerklärung",
+      "url": "/privacy"
+    },
+    {
+      "name": "Impressum",
+      "url": "/impressum"
+    }
+  ]
+}

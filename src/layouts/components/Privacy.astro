@@ -1,0 +1,55 @@
+---
+import Base from "@/layouts/Base.astro";
+import type { CollectionEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
+import PageHeader from "@/components/PageHeader.astro";
+
+interface Props {
+  page: "privacy" | "privacy-app";
+}
+
+const { page } = Astro.props;
+
+// Load the correct entry
+const entry = (await getEntry("pages", page)) as CollectionEntry<"pages">;
+const { Content } = await render(entry);
+
+// Dynamic title and meta tags
+const title =
+  page === "privacy"
+    ? "Daten&shy;schutz&shy;be&shy;ding&shy;ung&shy;en"
+    : "Daten&shy;schutz&shy;be&shy;ding&shy;ung&shy;en (App)";
+---
+
+<Base title={entry.data.title}>
+  <section class="page-hero pb-14 pt-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-[883px] text-center">
+        <PageHeader
+          page_data={{
+            title: title,
+            page_title: title,
+            buttons: [
+              {
+                enable: true,
+                label: "Website",
+                link: "/privacy",
+              },
+              {
+                enable: true,
+                label: "App",
+                link: "/privacy-app",
+              },
+            ],
+          }}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container content">
+      <Content />
+    </div>
+  </section>
+</Base>

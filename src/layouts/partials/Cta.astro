@@ -1,0 +1,45 @@
+---
+import Newsletter from "@/components/Newsletter.astro";
+import config from "@/config/config.json";
+import { Image } from "astro:assets";
+
+const {
+  call_to_action: {
+    title,
+    description,
+    button: { label, link },
+  },
+} = config;
+---
+
+<section class="pt-16 mb-[120px]!">
+  <div class="container relative">
+    <div
+      class="bg-gradient justify-center rounded-b-[80px] rounded-t-3xl p-6 pb-24 lg:p-16!"
+    >
+      <div class="lg:col-11">
+        <div class="row">
+          <div class="lg:col-7">
+            <h2 class="h1 text-white mb-6">{title}</h2>
+
+            <Newsletter id="newsleter-cta" color="primary" />
+          </div>
+          <div class="mt-8 lg:col-5 lg:mt-0">
+            <p class="text-white">
+              {description}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <Image
+      class="absolute -bottom-38 left-1/2 -translate-x-1/2 z-[1] w-full max-w-[250px] \
+        md:right-[15%] md:left-auto md:-translate-x-0 \
+        lg:max-w-[350px]"
+      alt="banner"
+      src="/images/dogs.png"
+      width={300}
+      height={300}
+    />
+  </div>
+</section>

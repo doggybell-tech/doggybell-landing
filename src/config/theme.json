@@ -1,0 +1,32 @@
+{
+  "colors": {
+    "default": {
+      "theme_color": {
+        "primary": "#4085FF",
+        "secondary": "#FF6248",
+        "body": "#E3F2FF",
+        "border": "#E3F2FF",
+        "light": "#75A7FF",
+        "dark": "#1a202c"
+      },
+      "text_color": {
+        "text": "#0D1B33",
+        "text-dark": "#222",
+        "text-light": "#ceced0"
+      }
+    }
+  },
+
+  "fonts": {
+    "font_family": {
+      "primary": "Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900",
+      "primary_type": "sans-serif",
+      "secondary": "Lilita+One",
+      "secondary_type": "sans-serif"
+    },
+    "font_size": {
+      "base": "16",
+      "scale": "1.2"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+---
+import Hero from "@/components/Hero.astro";
+import PartnerSlider from "@/components/PartnerSlider.astro";
+import Base from "@/layouts/Base.astro";
+import VideoComponent from "@/layouts/function-components/VideoComponent";
+import Cta from "@/layouts/partials/Cta.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { CollectionEntry } from "astro:content";
+import { getEntry } from "astro:content";
+
+const homepage = (await getEntry(
+  "homepage",
+  "-index"
+)) as CollectionEntry<"homepage">;
+const { banner } = homepage.data;
+---
+
+<Base>
+  <Hero banner={banner} />
+
+  <PartnerSlider />
+
+  <section class="section">
+    <div class="container flex flex-col items-center justify-center">
+      <div class="justify-center mt-6">
+        <h1 class="text-center">Was ist DoggyBell?</h1>
+        <p
+          class="text-lg mt-2 text-center"
+          set:html={markdownify(
+            "Guck dir unseren Trailer an und erfahre mehr über DoggyBell!"
+          )}
+        />
+      </div>
+      <div class="lg:col-8 flex justify-center mt-6">
+        <VideoComponent
+          client:load
+          src="/images/intro-thumbnail.png"
+          height={393}
+          width={700}
+          title=""
+          video_id="L-WrKCJW5ig"
+          video_width="w-[700px]"
+          video_height="h-[393px]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <Cta />
+</Base>

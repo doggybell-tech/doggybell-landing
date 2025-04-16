@@ -1,0 +1,61 @@
+---
+import Base from "@/layouts/Base.astro";
+import type { CollectionEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
+import PageHeader from "@/components/PageHeader.astro";
+
+interface Props {
+  page: "terms" | "terms-app";
+}
+
+const { page } = Astro.props;
+
+// Load the correct entry
+const entry = (await getEntry("pages", page)) as CollectionEntry<"pages">;
+const { Content } = await render(entry);
+
+// Dynamic button classes
+const websiteBtnClass = page === "terms" ? "btn-secondary" : "btn-primary";
+const appBtnClass = page === "terms-app" ? "btn-secondary" : "btn-primary";
+
+// Dynamic title and meta tags
+const title =
+  page === "terms"
+    ? "Nutz&shy;ungs&shy;be&shy;ding&shy;ung&shy;en"
+    : "Nutz&shy;ungs&shy;be&shy;ding&shy;ung&shy;en (App)";
+---
+
+<Base title={entry.data.title}>
+  <section class="page-hero pb-14 pt-16">
+    <div class="container">
+      <div class="page-hero-content mx-auto max-w-[883px] text-center">
+        <PageHeader
+          page_data={{
+            title: title,
+            page_title: title,
+            buttons: [
+              {
+                enable: true,
+                label: "Website",
+                link: "/terms",
+                class: websiteBtnClass,
+              },
+              {
+                enable: true,
+                label: "App",
+                link: "/terms-app",
+                class: appBtnClass,
+              },
+            ],
+          }}
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section pt-0">
+    <div class="container content">
+      <Content />
+    </div>
+  </section>
+</Base>

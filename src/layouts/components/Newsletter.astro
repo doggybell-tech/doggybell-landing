@@ -1,0 +1,95 @@
+---
+interface Props {
+  color: "primary" | "secondary";
+  id: string;
+}
+
+const { color = "secondary", id } = Astro.props;
+---
+
+<newsletter-form data-id={id}>
+  <form
+    id={id}
+    class="newsletter-form w-full max-w-md"
+    action="http://localhost:81/newsletter/subscribe"
+    method="POST"
+  >
+    <p class="response-message"></p>
+    <div class="flex items-center shadow-lg">
+      <input
+        class={`form-control !rounded-r-none !rounded-l-lg h-14 !border-white !border focus:border-${color}! px-4 flex-grow`}
+        type="email"
+        name="email"
+        placeholder="E-Mail eingeben"
+        required
+      />
+      <button
+        class={`btn btn-${color} rounded-l-none rounded-r-lg border-${color} h-14 whitespace-nowrap`}
+        type="submit"
+      >
+        VIP werden
+      </button>
+    </div>
+  </form>
+</newsletter-form>
+
+<script>
+  class NewsletterForm extends HTMLElement {
+    connectedCallback() {
+      const id = this.dataset.id;
+      if (!id) return;
+
+      const form = document.getElementById(id) as HTMLFormElement;
+      if (!form) return;
+
+      const submitBtn = form.querySelector(
+        "button[type='submit']"
+      ) as HTMLButtonElement;
+      const messageEl = form.querySelector(
+        ".response-message"
+      ) as HTMLParagraphElement;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+        const email = formData.get("email");
+
+        submitBtn.disabled = true;
+        messageEl.textContent = "Daten werden übermittelt...";
+        messageEl.className = "response-message !mb-2 text-md";
+
+        try {
+          const res = await fetch(form.action, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ email }),
+          });
+
+          if (res.ok) {
+            messageEl.textContent = "Danke für deine Anmeldung zum Newsletter!";
+            messageEl.classList.add("!text-green-600");
+            form.reset();
+          } else if (res.status === 400) {
+            messageEl.textContent =
+              "Bitte gib eine gültige E-Mail-Adresse ein.";
+            messageEl.classList.add("!text-yellow-600");
+          } else {
+            messageEl.textContent =
+              "Etwas ist schiefgelaufen. Bitte versuche es später erneut.";
+            messageEl.classList.add("!text-red-600");
+          }
+        } catch {
+          messageEl.textContent =
+            "Etwas ist schiefgelaufen. Bitte später erneut versuchen.";
+          messageEl.classList.add("!text-red-600");
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.textContent = "VIP werden";
+        }
+      });
+    }
+  }
+
+  customElements.define("newsletter-form", NewsletterForm);
+</script>

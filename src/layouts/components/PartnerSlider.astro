@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+
+const partners = [
+  {
+    name: "venturevilla",
+    src: "/images/partner/venturevilla.png",
+    width: 261,
+    height: 50,
+  },
+  {
+    name: "hannoverimpuls",
+    src: "/images/partner/hannoverimpuls.png",
+    width: 107,
+    height: 50,
+  },
+  {
+    name: "nbank",
+    src: "/images/partner/nbank.png",
+    width: 205,
+    height: 50,
+  },
+  {
+    name: "siegel",
+    src: "/images/partner/siegel-gruendungsstipendium.png",
+    width: 83,
+    height: 100,
+  },
+  {
+    name: "nexter",
+    src: "/images/partner/nexter.png",
+    width: 219,
+    height: 50,
+  },
+  {
+    name: "sandrabruns",
+    src: "/images/partner/sandrabruns.png",
+    width: 119,
+    height: 50,
+  },
+  {
+    name: "startup-impuls",
+    src: "/images/partner/startup-impuls-winter-badge-hr.png",
+    width: 157,
+    height: 100,
+  },
+];
+---
+
+<section class="section partners bg-[#C7DDFF] mb-16">
+  <div class="partner-container">
+    <div class="marquee">
+      <div class="marquee__inner">
+        {
+          partners
+            .concat(partners)
+            .map((partner, index) => (
+              <Image
+                src={partner.src}
+                alt={partner.name}
+                width={partner.width}
+                height={partner.height}
+                class="w-auto max-h-14 mr-12"
+              />
+            ))
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .marquee {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .marquee__inner {
+    display: flex;
+    width: max-content;
+    animation: marquee-scroll 30s linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>

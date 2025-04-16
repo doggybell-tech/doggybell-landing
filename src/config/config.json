@@ -1,0 +1,42 @@
+{
+  "site": {
+    "title": "DoggyBell",
+    "base_url": "https://doggybell.de",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.png",
+    "logo": "/images/logo.png",
+    "logo_width": "230",
+    "logo_height": "27",
+    "logo_text": "DoggyBell"
+  },
+
+  "settings": {
+    "pagination": 6,
+    "summary_length": 100
+  },
+
+  "call_to_action": {
+    "title": "Jetzt beim Newsletter anmelden!",
+    "description": "Ein Zuhause ohne Bellstress? Erfahre als Erste/-r, wie DoggyBell das möglich macht und erhalte exklusive Einblicke und Updates direkt in dein Postfach.",
+    "button": {
+      "label": "Download The Theme",
+      "link": "https://themefisher.com/astro-themes/pinwheel-astro"
+    }
+  },
+
+  "params": {
+    "footer_description": "Wir schaffen eine Welt, in der jedes Haustier ein liebevolles, sicheres und komfortables Zuhause hat. ",
+    "email": "info@doggybell.de",
+    "location": "#",
+    "phone": "#",
+    "contact_form_action": "#",
+    "copyright": "Copyright © 2025 bei [DoggyBell](https://doggybell.de)"
+  },
+
+  "metadata": {
+    "meta_author": "DoggyBell",
+    "meta_image": "/images/og-image.png",
+    "meta_description": "Der intelligente Trainingsautomat, der deinen Hund selbstständig erzieht."
+  }
+}

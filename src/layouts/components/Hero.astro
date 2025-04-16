@@ -1,0 +1,83 @@
+---
+import { markdownify } from "@/lib/utils/textConverter";
+import { Image } from "astro:assets";
+import Newsletter from "./Newsletter.astro";
+import Logo from "./Logo.astro";
+const { banner } = Astro.props;
+const { title, content } = banner;
+---
+
+<section
+  class="section relative lg:min-h-screen flex items-center justify-center p-0"
+>
+  <div
+    class="container grid grid-cols-1 lg:grid-cols-2 items-center lg:mmin-h-screen pt-16 lg:pb-16"
+  >
+    <!-- Left Column -->
+    <div
+      class="flex flex-col justify-center text-center items-center lg:text-left lg:items-start"
+    >
+      <!-- <span
+        aria-hidden="true"
+        class="inline-block px-3 py-1 text-sm font-semibold text-white bg-primary-gradient rounded-full mb-4"
+      >
+        Bald erhältlich
+      </span> -->
+      <Logo />
+
+      <h1
+        class="banner-title text-6xl font-bold leading-18 mb-6 mt-6"
+        set:html={markdownify(title)}
+      />
+
+      <p class="text-2xl mb-6 leading-9" set:html={markdownify(content)} />
+
+      <Newsletter id="newsleter-hero" color="secondary" />
+
+      <p
+        class="mt-4 text-sm"
+        set:html={markdownify(
+          "Jetzt auf die kostenlose VIP-Liste setzen und informiert werden."
+        )}
+      />
+    </div>
+
+    <!-- Right Column (can be empty or hold an absolute-positioned image) -->
+    <div class="relative justify-center w-full flex mt-8 lg:hidden">
+      <Image
+        class="h-[200px] w-auto"
+        alt="banner"
+        src="/images/malou.png"
+        width={139}
+        height={200}
+      />
+      <Image
+        class="absolute -bottom-6 -z-[1] h-[250px] w-auto"
+        alt="banner"
+        src="/images/malou-bg.svg"
+        width={250}
+        height={250}
+      />
+    </div>
+  </div>
+
+  <Image
+    class="absolute bottom-0 hidden lg:block w-auto z-[2] \
+     max-w-[35%] right-[10%] \
+    2xl:max-w-[25%] 2xl:right-[15%]"
+    alt="banner"
+    src="/images/malou.png"
+    width={556}
+    height={800}
+  />
+
+  <Image
+    class="absolute bottom-0 hidden lg:block w-auto -z-[1] \
+     max-w-[50%] right-[7.5%]\
+    2xl:max-w-[35%] 2xl:right-[10%]"
+    alt="banner"
+    src="/images/malou-bg.svg"
+    width={1000}
+    height={1000}
+  />
+</section>
