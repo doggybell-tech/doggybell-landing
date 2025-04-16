@@ -152,40 +152,30 @@ const { title, meta_title, description, image, noindex, canonical } =
     <meta name="twitter:card" content="summary_large_image" />
 
     <script
+      is:inline
       type="text/partytown"
       src="https://www.googletagmanager.com/gtag/js?id=G-VD937BH9TX"></script>
 
-    <script type="text/partytown">
+    <script is:inline type="text/partytown">
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
-      gtag("js", new Date());
 
+      gtag("js", new Date());
       gtag("consent", "default", {
         ad_storage: "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
         analytics_storage: "denied",
       });
-
       gtag("config", "G-VD937BH9TX", {
         anonymize_ip: true,
       });
-    </script>
-  </head>
-  <body>
-    <TwSizeIndicator />
-    <!-- <Header /> -->
-    <main id="main-content">
-      <slot />
-    </main>
-    <Footer />
 
-    <script is:inline>
-      function updateConsentsIfAllowed() {
-        const categories =
-          window.cookieConsentApi?.getConsentCategories?.() || [];
+      function updateConsentsIfAllowed(event) {
+        console.log("Updating consents based on user choice.");
+        const categories = event.detail.cookie.categories || [];
 
         console.log("Consent categories:", categories);
 
@@ -205,7 +195,12 @@ const { title, meta_title, description, image, noindex, canonical } =
             ad_personalization: "denied",
             analytics_storage: "denied",
           });
+
           deleteGACookies();
+
+          gtag("config", "G-VD937BH9TX", {
+            anonymize_ip: true,
+          });
         }
       }
 
@@ -216,10 +211,18 @@ const { title, meta_title, description, image, noindex, canonical } =
         });
       }
 
-      ["cc:onConsentsReady", "cc:onConsentChanged"].forEach((event) => {
+      ["cc:onConsent", "cc:onChange"].forEach((event) => {
         console.log("Listening for event:", event);
         window.addEventListener(event, updateConsentsIfAllowed);
       });
     </script>
+  </head>
+  <body>
+    <TwSizeIndicator />
+    <!-- <Header /> -->
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>
