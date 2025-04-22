@@ -92,6 +92,8 @@ const { title, meta_title, description, image, noindex, canonical } =
       )}
     />
 
+    <meta name="keywords" content={config.metadata.meta_keywords} />
+
     <ClientRouter />
 
     <!-- author from config.json -->
@@ -215,6 +217,28 @@ const { title, meta_title, description, image, noindex, canonical } =
         console.log("Listening for event:", event);
         window.addEventListener(event, updateConsentsIfAllowed);
       });
+    </script>
+
+    <script is:inline type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "DoggyBell",
+        "url": "https://doggybell.de",
+        "logo": "https://doggybell.de/images/logo.png",
+        "sameAs": [
+          "https://www.instagram.com/doggybell.official",
+          "https://www.tiktok.com/@doggybell.official",
+          "https://www.facebook.com/doggybell.official"
+        ],
+        "description": "DoggyBell ist der weltweit erste positive Anti-Bell-Automat. Bring Ruhe in euer Zuhause für weniger Frust und mehr Gemeinsamkeit.",
+        "email": "info@doggybell.de",
+        "foundingDate": "2025",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "DE"
+        }
+      }
     </script>
   </head>
   <body>
