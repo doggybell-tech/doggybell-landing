@@ -4,9 +4,9 @@ title: "Impressum"
 
 **Angaben gemäß § 5 TMG**
 
-Dr. Tamara Sherif
-Walderseestraße 7
-30163 Hannover
+Dr. Tamara Sherif  
+Walderseestraße 7  
+30163 Hannover  
 
 ### Kontakt
 
@@ -15,6 +15,6 @@ Web: [https://www.doggybell.de](https://www.doggybell.de)
 
 ### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
 
-Dr. Tamara Sherif
-Walderseestraße 7
+Dr. Tamara Sherif  
+Walderseestraße 7  
 30163 Hannover
