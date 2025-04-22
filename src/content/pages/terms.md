@@ -4,7 +4,7 @@ title: "Nutzungsbedingungen"
 
 **Stand: April 2025**
 
-Diese Website wird betrieben von René Sass, Noltestraße 21, 30451 Hannover. Durch die Nutzung dieser Website erklären Sie sich mit den folgenden Bedingungen einverstanden.
+Diese Website wird betrieben von Dr. Tamara Sherif, Walderseestraße 7, 30163 Hannover. Durch die Nutzung dieser Website erklären Sie sich mit den folgenden Bedingungen einverstanden.
 
 ### 1. Geltungsbereich
 
@@ -20,7 +20,7 @@ Besucher:innen haben die Möglichkeit, sich für unseren Newsletter einzutragen.
 
 ### 4. Rechte an Inhalten
 
-Alle auf dieser Website veröffentlichten Inhalte – insbesondere Texte, Fotografien, Grafiken, Audio- und Videodateien – unterliegen dem Urheberrecht und sind Eigentum von René Sass bzw. der entsprechend genannten Rechteinhaber:innen. Dies gilt insbesondere für eigens produzierte, hochauflösende Bildmaterialien, die in aufwendiger Eigenproduktion erstellt wurden.
+Alle auf dieser Website veröffentlichten Inhalte – insbesondere Texte, Fotografien, Grafiken, Audio- und Videodateien – unterliegen dem Urheberrecht und sind Eigentum von Dr. Tamara Sherif bzw. der entsprechend genannten Rechteinhaber:innen. Dies gilt insbesondere für eigens produzierte, hochauflösende Bildmaterialien, die in aufwendiger Eigenproduktion erstellt wurden.
 
 Jede Form der Nutzung außerhalb der persönlichen, nicht-kommerziellen Information – insbesondere das Kopieren, Speichern, Verbreiten, Veröffentlichen oder Bearbeiten unserer Inhalte – ist **ohne unsere ausdrückliche schriftliche Genehmigung strengstens untersagt**.
 

@@ -409,7 +409,7 @@ select:invalid {
   }
 
   p {
-    @apply text-sm;
+    @apply text-sm leading-6;
   }
 
   li > a {

@@ -19,7 +19,7 @@
 
   "fonts": {
     "font_family": {
-      "primary": "Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900",
+      "primary": "Merriweather+Sans:ital,wght@0,300..800;1,300..800",
       "primary_type": "sans-serif",
       "secondary": "Lilita+One",
       "secondary_type": "sans-serif"

@@ -10,9 +10,9 @@ Der Schutz personenbezogener Daten ist uns wichtig. Diese Datenschutzerklärung 
 
 Verantwortlich für die Datenverarbeitung ist:
 
-René Sass  
-Noltestraße 21  
-30451 Hannover  
+Dr. Tamara Sherif
+Walderseestraße 7
+30163 Hannover
 [info@doggybell.de](mailto:info@doggybell.de)
 
 ### 2. Erhobene Daten

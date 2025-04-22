@@ -1,11 +1,13 @@
 ---
 banner:
   title: "Die Anti-Bell-Revolution beginnt."
-  content: "DoggyBell bringt Ruhe in euer Zuhause. Weniger Frust. Mehr Gemeinsamkeit. 
-Der weltweit erste positive Anti-Bell-Automat. "
+  content: | 
+    DoggyBell bringt Ruhe in euer Zuhause.  
+    Weniger Frust. Mehr Gemeinsamkeit.  
+    Der weltweit erste positive Anti-Bell-Automat.
   image: /images/banner-img.png
   button:
-    enable: true
+    enable: false
     label: Newsletter abonnieren
     link: "https://themefisher.com/astro-themes/pinwheel-astro"
 

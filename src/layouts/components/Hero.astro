@@ -30,7 +30,10 @@ const { title, content } = banner;
         set:html={markdownify(title)}
       />
 
-      <p class="text-2xl mb-6 leading-9" set:html={markdownify(content)} />
+      <p
+        class="text-2xl mb-6 leading-9 content"
+        set:html={markdownify(content)}
+      />
 
       <Newsletter id="newsleter-hero" color="secondary" />
 

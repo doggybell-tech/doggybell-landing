@@ -47,22 +47,33 @@ const partners = [
 ];
 ---
 
-<section class="section partners bg-[#C7DDFF] mb-16">
-  <div class="partner-container">
-    <div class="marquee">
-      <div class="marquee__inner">
+<section class="section bg-[#C7DDFF] mb-16 overflow-hidden">
+  <div class="marquee group" aria-label="Partner Logos">
+    <div class="marquee__inner group-hover:[animation-play-state:paused]">
+      <div class="marquee__group">
         {
-          partners
-            .concat(partners)
-            .map((partner, index) => (
-              <Image
-                src={partner.src}
-                alt={partner.name}
-                width={partner.width}
-                height={partner.height}
-                class="w-auto max-h-14 mr-12"
-              />
-            ))
+          partners.map((partner) => (
+            <Image
+              src={partner.src}
+              alt={partner.name}
+              width={partner.width}
+              height={partner.height}
+              class="w-auto max-h-16 mr-12"
+            />
+          ))
+        }
+      </div>
+      <div class="marquee__group">
+        {
+          partners.map((partner) => (
+            <Image
+              src={partner.src}
+              alt={partner.name}
+              width={partner.width}
+              height={partner.height}
+              class="w-auto max-h-16 mr-12"
+            />
+          ))
         }
       </div>
     </div>
@@ -79,7 +90,13 @@ const partners = [
   .marquee__inner {
     display: flex;
     width: max-content;
-    animation: marquee-scroll 30s linear infinite;
+    animation: marquee-scroll 20s linear infinite;
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .marquee__group {
+    display: flex;
   }
 
   @keyframes marquee-scroll {
@@ -89,5 +106,10 @@ const partners = [
     100% {
       transform: translateX(-50%);
     }
+  }
+
+  /* Optional: smooth pause on hover */
+  .group:hover .marquee__inner {
+    animation-play-state: paused;
   }
 </style>

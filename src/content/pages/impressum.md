@@ -4,10 +4,9 @@ title: "Impressum"
 
 **Angaben gemäß § 5 TMG**
 
-René Sass  
-Noltestraße 21  
-30451 Hannover  
-Deutschland
+Dr. Tamara Sherif
+Walderseestraße 7
+30163 Hannover
 
 ### Kontakt
 
@@ -16,6 +15,6 @@ Web: [https://www.doggybell.de](https://www.doggybell.de)
 
 ### Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV
 
-René Sass  
-Noltestraße 21  
-30451 Hannover
+Dr. Tamara Sherif
+Walderseestraße 7
+30163 Hannover
