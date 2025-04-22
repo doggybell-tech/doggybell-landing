@@ -85,8 +85,10 @@ module.exports = plugin.withOptions(() => {
   return function ({ addBase, addUtilities, matchUtilities }) {
     // Default vars on :root; dark vars on .dark
     addBase({
-      ":root": baseVars,
-      ".dark": darkVars,
+      ":root": {
+        ...baseVars
+      },
+      // ".dark": darkVars,
     });
 
     const fontUtils = {};

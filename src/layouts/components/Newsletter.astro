@@ -7,7 +7,7 @@ interface Props {
 const { color = "secondary", id } = Astro.props;
 ---
 
-<newsletter-form data-id={id}>
+<newsletter-form data-id={id} class="inline-block md:block justify-center">
   <form
     id={id}
     class="newsletter-form w-full max-w-md"

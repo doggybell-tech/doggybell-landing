@@ -11,8 +11,8 @@
       },
       "text_color": {
         "text": "#0D1B33",
-        "text-dark": "#222",
-        "text-light": "#ceced0"
+        "text-dark": "#0D1B33",
+        "text-light": "#0D1B33"
       }
     }
   },

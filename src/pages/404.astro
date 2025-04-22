@@ -22,10 +22,7 @@ const { Content } = await render(entry);
             height={400}
             width={400}
           /> -->
-          <h1
-            class="text-6xl font-bold mb-4"
-            set:html={markdownify(entry.data.title)}
-          />
+          <h1 class="text-6xl mb-4" set:html={markdownify(entry.data.title)} />
           <Content />
         </div>
       </div>
