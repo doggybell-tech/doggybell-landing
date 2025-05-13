@@ -68,7 +68,8 @@ const { color = "secondary", id } = Astro.props;
           });
 
           if (res.ok) {
-            messageEl.textContent = "Danke für deine Anmeldung zum Newsletter!";
+            messageEl.textContent =
+              "Bitte bestätige die Anmeldung in deiner E-Mail.";
             messageEl.classList.add("!text-green-600");
             form.reset();
           } else if (res.status === 400) {
