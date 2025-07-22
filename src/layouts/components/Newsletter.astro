@@ -4,6 +4,12 @@ interface Props {
   id: string;
 }
 
+// Check if we are on dev or prod
+const isDev = import.meta.env.MODE === "development";
+const serverUrl = isDev
+  ? "http://192.168.8.104:81"
+  : "https://server.doggybell.de";
+
 const { color = "secondary", id } = Astro.props;
 ---
 
@@ -11,7 +17,7 @@ const { color = "secondary", id } = Astro.props;
   <form
     id={id}
     class="newsletter-form w-full max-w-md"
-    action="https://server.doggybell.de/newsletter/subscribe"
+    action={`${serverUrl}/newsletter/subscribe`}
     method="POST"
   >
     <p class="response-message"></p>
